@@ -2,30 +2,44 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
+// var mongoose = require('mongoose');
 var port = process.env.PORT || 8090;
+// var configDB = require('./config/database.js');
 //global
-var db, collection;
+// var db, collection;
 
-const url ='mongodb+srv://dmorin15:F1yGrKWSTli8lbil@cluster0.gfs2s.mongodb.net/?retryWrites=true&w=majority'
-// const dbName = "demo";
+const url ='mongodb+srv://dmorin15:F1yGrKWSTli8lbil@cluster0.gfs2s.mongodb.net/habits?retryWrites=true&w=majority'
 const dbName = "habits";
 //higher order function
 
-//USE MONGOOSE TO RECONIG THIS "LISTEN METHOD" TO ACCOMODATE REMOTE HEROKU PORT #?!
-// app.listen(8090, () => {
+//USE MONGOOSE TO RECONFIG THIS "LISTEN METHOD" TO ACCOMODATE REMOTE HEROKU PORT #?!
+app.listen(port, () => {
+   MongoClient.connect(
+     url,
+     {useNewUrlParser:true, useUnifiedTopology:true},
+     (error, client) => {
+       if (error) {
+         throw error;
+       }
+       db = client.db(dbName);
+       console.log("Connected to `" + dbName + "`!");
+     }
+   );
+ });
 
-  MongoClient.connect(
-    url,
-    {useNewUrlParser:true, useUnifiedTopology:true},
-    (error, client) => {
-      if (error) {
-        throw error;
-      }
-      db = client.db(dbName);
-      console.log("Connected to `" + dbName + "`!");
-    }
-  );
-// });
+
+// mongoose.set('useNewUrlParser', true);
+// mongoose.set('useUnifiedTopology', true);
+
+// // configuration ===============================================================
+// mongoose.connect(configDB.url, (err, database) => {
+//   if (err) return console.log(err)
+//   db = database
+//   console.log('Assigning Routes...')
+//   require('./server.js')(app, db);
+// }); // connect to our database
+
+
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -105,5 +119,5 @@ app.delete("/deleteHabit", (req, res) => {
 });
 
 
- app.listen(port);
- console.log('The magic happens on port ' + port)
+//  app.listen(port);
+//  console.log('The magic happens on port ' + port)
