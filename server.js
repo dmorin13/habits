@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
- var port = process.env.PORT || 8090;
+var port = process.env.PORT || 8090;
 //global
 var db, collection;
 
