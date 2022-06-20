@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
-// var port = process.env.PORT || 8090;
+ var port = process.env.PORT || 8090;
 //global
 var db, collection;
 
@@ -12,7 +12,8 @@ const dbName = "habits";
 //higher order function
 
 //USE MONGOOSE TO RECONIG THIS "LISTEN METHOD" TO ACCOMODATE REMOTE HEROKU PORT #?!
-app.listen(8090 || process.env.PORT, () => {
+// app.listen(8090, () => {
+
   MongoClient.connect(
     url,
     {useNewUrlParser:true, useUnifiedTopology:true},
@@ -24,7 +25,7 @@ app.listen(8090 || process.env.PORT, () => {
       console.log("Connected to `" + dbName + "`!");
     }
   );
-});
+// });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -103,6 +104,6 @@ app.delete("/deleteHabit", (req, res) => {
     })
 });
 
-/////////
-// app.listen(port);
-// console.log('The magic happens on port ' + port);
+
+ app.listen(port);
+ console.log('The magic happens on port ' + port)
