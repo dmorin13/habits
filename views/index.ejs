@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css"> 
+  <title>Habit</title>
+</head>
+<body>
+
+    <section>
+      <img src="imgs/health.jpg" style="width:80%;height:150px;margin-left:80px;" alt="habit activities">
+        <h2 style="text-align: center;font-size:50px;font-family: fantasy; "><i class="fa-solid fa-person-running"></i> My Habits<i class="fa-solid fa-chart-mixed"></i></h2>
+      <img src="imgs/roots.jpg" style="width:250px;height:300px; margin-left: 400px;" alt="person yoga pose tree">
+     
+        <form method = "post" action="/habitList" style="display: inline;">
+        
+          <input style="transform: scale(2);width:250px; margin-left: 400px; margin-right: 200px; margin-bottom: 50px;" type="text" id="input" name = "habit" placeholder="What do you want to work on today?">
+          <!-- how to connect button to 'input'?  -->
+          <button  style="transform: scale(2);background-color: aquamarine;" type ="submit" class="btn">Add Habit 💪🏾 📝 </button>
+        </form>
+       
+      </section>
+
+      <section class="view-container"> 
+        <div class="grid-container">
+          <div class="grid-item grid-row-header  hidden"></div>
+          <div class="grid-item grid-row-header">Sun</div>
+          <div class="grid-item grid-row-header">Mon</div>
+          <div class="grid-item grid-row-header">Tue</div>
+          <div class="grid-item grid-row-header">Wed</div>
+          <div class="grid-item grid-row-header">Thu</div>
+          <div class="grid-item grid-row-header">Fri</div>
+          <div class="grid-item grid-row-header">Sat</div>
+          
+          <%for(let i=0;i<habitList.length;i++){%>
+          
+            <div class="grid-item habit-name">
+              <span><%=habitList[i].habit%></span>
+              <button class="delete-habit" data-name="<%=habitList[i].habit%>"> 🚫 </button>
+              <button class="star-habit <%=habitList[i].starred ? "star-on" : "" %> " data-name="<%=habitList[i].habit%>"> ⭐ </button>
+            </div>
+            
+         
+            <div class="grid-item">
+              <!-- asssign iterating  "data-name=" to each checkbox?-->
+              <input name="<%= [i]%>" id="checkbox1" type="checkbox" class="" />
+            </div>
+            <div class="grid-item">
+              <input name="<%= [i]%>"  type="checkbox"  class="" />
+            </div>
+            <div class="grid-item">
+              <input name="<%= [i]%>"  type="checkbox"  class=""  />
+            </div>
+            <div class="grid-item">
+              <input name="<%= [i]%>"  type="checkbox" class="" />
+            </div>
+            <div class="grid-item">
+              <input name="<%= [i]%>"  type="checkbox"  class="" />
+            </div>
+            <div class="grid-item">
+              <input name="<%=[i]%>"  type="checkbox"  class="" />
+            </div>
+            <div class="grid-item">
+              <input name="<%=[i]%>"  type="checkbox"  class="" />
+            </div>
+        
+          <%}%>
+        </div>
+      </section>   
+      <section class = messageDisplay style="display: inline;">
+        <img class="plant" style="margin-right: 600px;" src="imgs/habit.png" alt="plant">
+        <img src="imgs/habits-hero.png" alt="plant watered">
+      </section>
+          
+  <script src="main.js"></script>
+</body>
+</html>

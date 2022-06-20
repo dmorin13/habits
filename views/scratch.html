@@ -1,0 +1,206 @@
+<h2>Habit List Column</h2>
+
+          <ul class="habit-list" id="habit-list">
+              <!-- for (let habit of habitList){  -->
+             <%for(var i=0; i<habitList.length; i++) { %> 
+              <%console.log(habitList[i]) %>
+                <li class="habit">
+               <span><%=habitList[i].habit%></span>
+              </li> 
+  
+
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="mondayHabit" name="Habit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="tuesdayHabit" name="yHabit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="wednesdayHabit" name="Habit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="thursdayHabit" name="Habit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="fridayHabit" name="Habit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="saturdayHabit" name="Habit" value="habitCompleted"></div></li>
+        <li class="grid-item"><div class="checkOff"><input type="checkbox" id="sundayHabit" name="Habit" value="habitCompleted"></div></li>
+        <!-- <form method = "delete" action="/deleteHabit" name="<habitList[i].habit"> -->
+          <form method = "delete" action="/deleteHabit" name="">
+            <button type ="submit" class="deleteBtn"><i class="fa-solid fa-ban"></i></button>
+        </form>
+       
+        <!-- <form  method ="put" action="/editHabitList" name="habitList[i].habit"> -->
+          <form method = "delete" action="/deleteHabit" name="">
+          <button type ="submit" class="starBtn"> <i class="fa-solid fa-star-sharp"></i></button>
+        </form>
+      </ul>
+      <!-- <div class="grid-item"><div class="checkOff"><input type="checkbox" id="mondayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="tuesdayHabit" name="yHabit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="wednesdayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="thursdayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="fridayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="saturdayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="sundayHabit" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="mondayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="tuesdayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="wednesdayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="thursdayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="fridayyHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="saturdayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="sundayHabit2" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="mondayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="tuesdayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="wednesdayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="thursdayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="fridayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="saturdayHabit3" name="Habit" value="habitCompleted"></div></div>
+        <div class="grid-item"><div class="checkOff"><input type="checkbox" id="sundayHabit3" name="Habit" value="habitCompleted"></div></div> -->
+                
+         <!-- <div class="grid-row"> -->
+            <!-- let done= habit[i].done  -->
+            <!-- data-done=done -->
+              <!-- <form>
+                <div class="checkOff"><input type="checkbox" id="mondayHabit1" name="mondayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="tuesdayHabit1" name="tuesdayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="wednesdayHabit1" name="wednesdayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="thursdayHabit1" name="thursdayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="fridayHabit1" name="fridayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="saturdayHabit1" name="saturdayHabit" value="habitCompleted"></div>
+                <div class="checkOff"><input type="checkbox" id="sundayHabit1" name="sundayHabit" value="habitCompleted"></div>         
+            </form>
+          </div> -->
+         
+    
+          <section>  
+            <!-- //boolean:checked, not checked   -->
+            <p> 
+              <!-- <span>habitList[i].checked</span> -->
+              <i class="fa-solid fa-list-check"></i>
+            </p>
+            <p>
+              <!-- //boolean: goal met, goal not met, (met: 3 checks in a row)  if conditional   -->
+            </p>
+        </section> 
+
+        <!-- Display message according to habit status and progress goals met, if/ conditional  -->
+      <div> 
+        <h2 class="messageOne"></h2>
+        <h2 class="messageTwo"></h2>
+         <!-- const messageOne = document.querySelector('.messageOne')
+        const messageTwo =document.querySelector('.messageTwo') 
+        if( = habit.status='habitCompleted'){
+            messageOne.innerText="You're on track! Keep it Up!"
+          }else{
+            messageOne.innerText="You're not there yet, but keep going,1 day at a time  !"
+          } -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FORMERLY main.js
+///////////////////
+//checkbox function 
+/* <input type="checkbox" onclick="onClickHandler()" onchange="onChangeHandler()" /> */
+//  const btn =document.querySelector('.btn')
+//  btn.addEventListener('click', createAnLi)
+
+
+const starred = document.getElementsByClassName("fa-star-sharp");
+const checkbox= document.getElementById("checkbox");//one for each checkbox, or assign a  common class?
+const ban = document.getElementsByClassName("fa-ban");
+
+ Array.from(habitList).forEach(function(element) {
+       element.addEventListener('click', function(){
+        //  const thumbsUp = this.parentNode.parentNode.childNodes[1].innerText
+        // const habit =
+        //  const checked = 
+        //  const starred = 
+
+         fetch('habit', {
+           method: 'put',
+           headers: {'Content-Type': 'application/json'},
+           body: JSON.stringify({
+             'habit': habit,
+             'completed':true,
+             'starred':true,
+           })
+         })
+
+         //rename response to "habitList" to match the server.js file ?
+        .then(response => {
+           if (response.ok) return response.json()
+         })
+         .then(data => {
+           console.log(data)
+           window.location.reload(true)
+         })
+       });
+    });
+ Array.from(habitList.forEach(function(element) {
+   element.addEventListener('click', function(){
+     // ex: const thumbsUp = this.parentNode.parentNode.childNodes[1].innerText
+        // const habit =
+        //  const checked = 
+        //  const starred = 
+     fetch('/updateHabitList', {
+       method: 'put',
+       headers: {'Content-Type': 'application/json'},
+       body: JSON.stringify({
+        'habit': habit,
+        'completed':true,
+        'starred':true,
+       })
+     })
+     .then(response => {
+       if (response.ok) return response.json()
+     })
+     .then(data => {
+       console.log(data)
+       window.location.reload(true)
+     })
+   });
+
+ Array.from(ban).forEach(function(element) {
+       element.addEventListener('click', function(){
+        // const habit =
+        //  const checked = 
+        //  const starred = 
+         fetch('/deleteHabit', {
+           method: 'delete',
+           headers: {
+             'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({
+            'habit': habit,
+            'completed':true,
+            'starred':true,
+           })
+           .then(function (response) {
+           window.location.reload()
+         })
+       });
+      })
+    }
+  }
+///////////////////////
+
+
+
+
+---------------------------
+
+
+GET habit list --> Server
+    Server: habit list --> client
+
+
+{ 
+  "habit": "Drink all the water"
+  "starred": true
+}
+
+<btn ... class="star-buttn star-on"
